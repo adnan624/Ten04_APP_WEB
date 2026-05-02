@@ -11,7 +11,7 @@ import type { SettingsScreenProps } from '../types/navigation';
 type ToggleKey = 'notifications' | 'biometric' | 'darkMode' | 'analytics';
 
 const PROFILE = {
-  name:     'Adnan Sheikh',
+  name:     'Adnan Bohra',
   role:     'Account Administrator',
   plan:     'Enterprise',
   initials: 'AS',

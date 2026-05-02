@@ -84,7 +84,7 @@ export default function FormScreen({ navigation }: FormScreenProps) {
                 <Text style={s.label}>Full Name *</Text>
                 <TextInput
                   style={[s.input, focused === 'name' && s.inputFocused]}
-                  placeholder="Adnan Sheikh"
+                  placeholder="Adnan Bohra"
                   placeholderTextColor={C.textDim}
                   value={fields.name}
                   onChangeText={update('name')}
