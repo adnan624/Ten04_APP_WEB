@@ -1,11 +1,14 @@
 const { getDefaultConfig, mergeConfig } = require('@react-native/metro-config');
+const defaultConfig = getDefaultConfig(__dirname);
 
-/**
- * Metro configuration
- * https://reactnative.dev/docs/metro
- *
- * @type {import('@react-native/metro-config').MetroConfig}
- */
-const config = {};
+const config = {
+  resolver: {
+    // Put .web.js LAST so Metro never resolves web files on a native device
+    sourceExts: [
+      ...defaultConfig.resolver.sourceExts,
+      'web.js', 'web.jsx', 'web.ts', 'web.tsx',
+    ],
+  },
+};
 
-module.exports = mergeConfig(getDefaultConfig(__dirname), config);
+module.exports = mergeConfig(defaultConfig, config);
