@@ -73,3 +73,9 @@ yarn-error.log
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# Hot Updater (OTA) — never commit credentials
+.env.hotupdater
+.hot-updater/
+# hot-updater
+.hot-updater/output

@@ -100,7 +100,7 @@ export default function LandingScreen({ navigation }: Props) {
         <Animated.View style={[s.heroContent, { opacity: fadeAnim, transform: [{ translateY: slideAnim }] }]}>
           <View style={s.heroBadge}>
             <View style={s.heroBadgeDot} />
-            <Text style={s.heroBadgeText}>Payments · Built Different</Text>
+            <Text style={s.heroBadgeText}>Payments ye to chal gaya bhai</Text>
           </View>
 
           <Text style={s.heroTitle}>

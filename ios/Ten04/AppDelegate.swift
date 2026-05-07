@@ -2,6 +2,7 @@ import UIKit
 import React
 import React_RCTAppDelegate
 import ReactAppDependencyProvider
+import HotUpdater
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -40,9 +41,12 @@ class ReactNativeDelegate: RCTDefaultReactNativeFactoryDelegate {
 
   override func bundleURL() -> URL? {
 #if DEBUG
-    RCTBundleURLProvider.sharedSettings().jsBundleURL(forBundleRoot: "index")
+    // Dev: load JS from Metro bundler running on localhost
+    return RCTBundleURLProvider.sharedSettings().jsBundleURL(forBundleRoot: "index")
 #else
-    Bundle.main.url(forResource: "main", withExtension: "jsbundle")
+    // Release: prefer the OTA bundle; HotUpdater falls back to the bundled main.jsbundle
+    // automatically if no remote update has been installed yet.
+    return HotUpdater.bundleURL()
 #endif
   }
 }

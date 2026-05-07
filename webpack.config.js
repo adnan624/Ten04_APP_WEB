@@ -43,6 +43,7 @@ module.exports = {
         include: [
           path.resolve(appDirectory, 'index.web.js'),
           path.resolve(appDirectory, 'App.tsx'),
+          path.resolve(appDirectory, 'App.web.tsx'),
           path.resolve(appDirectory, 'src'),
           path.resolve(appDirectory, 'node_modules/react-native-web'),
         ],
